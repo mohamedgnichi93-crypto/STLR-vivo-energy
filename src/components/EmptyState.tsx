@@ -6,9 +6,12 @@ interface EmptyStateProps {
   errorCode?: string | number;
   errorMessage?: string;
   onRetry?: () => void;
+  title?: string;
+  description?: string;
+  retryLabel?: string;
 }
 
-const EmptyState = ({ type, errorCode, errorMessage, onRetry }: EmptyStateProps) => {
+const EmptyState = ({ type, errorCode, errorMessage, onRetry, title, description, retryLabel }: EmptyStateProps) => {
   if (type === "error") {
     return (
       <div className="flex flex-col items-center justify-center py-20 px-6">
@@ -43,23 +46,25 @@ const EmptyState = ({ type, errorCode, errorMessage, onRetry }: EmptyStateProps)
       <div className="bg-card border border-border rounded-xl p-10 max-w-md w-full text-center space-y-4">
         <Zap className="h-10 w-10 text-primary/40 mx-auto" />
         <h2 className="text-base font-semibold text-muted-foreground uppercase tracking-wider">
-          Aucune donnée disponible
+          {title || "Aucune donnée disponible"}
         </h2>
         <p className="text-sm text-muted-foreground">
-          L'API n'a retourné aucune donnée pour la période sélectionnée.
+          {description || "L'API n'a retourné aucune donnée pour la période sélectionnée."}
         </p>
-        <ul className="text-xs text-muted-foreground space-y-1 text-left inline-block">
-          <li className="flex items-center gap-2">
-            <span className="text-primary">•</span> Vérifiez la connexion API
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="text-primary">•</span> Essayez une autre période
-          </li>
-        </ul>
+        {!title && (
+          <ul className="text-xs text-muted-foreground space-y-1 text-left inline-block">
+            <li className="flex items-center gap-2">
+              <span className="text-primary">•</span> Vérifiez la connexion API
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-primary">•</span> Essayez une autre période
+            </li>
+          </ul>
+        )}
         {onRetry && (
           <Button size="sm" variant="outline" onClick={onRetry} className="mt-2 border-border">
             <RefreshCw className="h-3.5 w-3.5 mr-1.5" />
-            Actualiser
+            {retryLabel || "Actualiser"}
           </Button>
         )}
       </div>

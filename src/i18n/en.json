@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Home",
+    "electricity": "Electricity",
+    "wattnow": "Wattnow",
+    "suivi": "Monitoring",
+    "eau": "Water",
+    "rapports": "Reports",
+    "parametres": "Settings",
+    "deconnexion": "Logout"
+  },
+  "home": {
+    "system": "Monitoring System",
+    "title": "STLR Energy",
+    "subtitle": "Control Center",
+    "electricite": "Electricity",
+    "eau": "Water",
+    "appareils_electricite": "Electricity meters",
+    "appareils_eau": "Water meters",
+    "releves": "Recorded readings",
+    "dernier_releve": "Last reading",
+    "ajouter_appareil": "Add a device",
+    "saisir_donnee": "Add a reading",
+    "nom_appareil": "Device name (ex: Main Cave Meter)",
+    "ajouter": "Add",
+    "enregistrer": "Save",
+    "aucun_electricite": "No electricity meter configured",
+    "aucun_eau": "No water meter configured",
+    "date": "Date",
+    "appareil": "Device",
+    "selectionner": "Select...",
+    "consommation_kwh": "Consumption (kWh)",
+    "volume_m3": "Volume (m³)",
+    "derniers_releves": "Last 10 readings",
+    "voir_analyse": "View full analysis →",
+    "aucun_releve": "No readings recorded yet.",
+    "commencer": "Use \"+ Add a reading\" to get started.",
+    "releve_count": "reading",
+    "releves_count": "readings"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign in",
+    "error": "Invalid credentials"
+  },
+  "parametres": {
+    "title": "Settings",
+    "theme": "Theme",
+    "theme_dark": "Dark",
+    "theme_light": "Light",
+    "langue": "Language",
+    "langue_fr": "Français",
+    "langue_en": "English",
+    "cache": "Cache",
+    "vider_cache": "Clear cache"
+  },
+  "sidebar": {
+    "version": "v1.0.0"
+  },
+  "table": {
+    "appareil": "Device",
+    "date": "Date",
+    "consommation": "Consumption"
+  },
+  "filters": {
+    "appliquer": "Apply filters",
+    "date_debut": "Start date",
+    "date_fin": "End date",
+    "departement": "Department",
+    "appareils": "Devices",
+    "tout_selectionner": "Select all",
+    "tout_deselectionner": "Deselect all",
+    "tous_departements": "All departments",
+    "phase": "Phase",
+    "granularite": "Granularity",
+    "horaire": "Hourly",
+    "journalier": "Daily",
+    "hebdomadaire": "Weekly",
+    "mensuel": "Monthly",
+    "actualiser": "Refresh",
+    "exporter": "Export Excel",
+    "cache_status": "Cache"
+  }
+}

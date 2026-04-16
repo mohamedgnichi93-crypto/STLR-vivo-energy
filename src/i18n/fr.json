@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "electricity": "Électricité",
+    "wattnow": "Wattnow",
+    "suivi": "Suivi",
+    "eau": "Eau",
+    "rapports": "Rapports",
+    "parametres": "Paramètres",
+    "deconnexion": "Déconnexion"
+  },
+  "home": {
+    "system": "Système de surveillance",
+    "title": "STLR Énergie",
+    "subtitle": "Centre de contrôle",
+    "electricite": "Électricité",
+    "eau": "Eau",
+    "appareils_electricite": "Appareils électricité",
+    "appareils_eau": "Appareils eau",
+    "releves": "Relevés enregistrés",
+    "dernier_releve": "Dernier relevé",
+    "ajouter_appareil": "Ajouter un appareil",
+    "saisir_donnee": "Saisir une donnée",
+    "nom_appareil": "Nom de l'appareil (ex: Compteur Principal Cave)",
+    "ajouter": "Ajouter",
+    "enregistrer": "Enregistrer",
+    "aucun_electricite": "Aucun appareil électrique configuré",
+    "aucun_eau": "Aucun appareil d'eau configuré",
+    "date": "Date",
+    "appareil": "Appareil",
+    "selectionner": "Sélectionner...",
+    "consommation_kwh": "Consommation (kWh)",
+    "volume_m3": "Volume (m³)",
+    "derniers_releves": "10 derniers relevés",
+    "voir_analyse": "Voir l'analyse complète →",
+    "aucun_releve": "Aucun relevé enregistré pour le moment.",
+    "commencer": "Utilisez \"+ Saisir une donnée\" pour commencer.",
+    "releve_count": "relevé",
+    "releves_count": "relevés"
+  },
+  "login": {
+    "title": "Connexion",
+    "email": "Email",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "error": "Identifiants incorrects"
+  },
+  "parametres": {
+    "title": "Paramètres",
+    "theme": "Thème",
+    "theme_dark": "Sombre",
+    "theme_light": "Clair",
+    "langue": "Langue",
+    "langue_fr": "Français",
+    "langue_en": "English",
+    "cache": "Cache",
+    "vider_cache": "Vider le cache"
+  },
+  "sidebar": {
+    "version": "v1.0.0"
+  },
+  "table": {
+    "appareil": "Appareil",
+    "date": "Date",
+    "consommation": "Consommation"
+  },
+  "filters": {
+    "appliquer": "Appliquer les filtres",
+    "date_debut": "Date début",
+    "date_fin": "Date fin",
+    "departement": "Département",
+    "appareils": "Appareils",
+    "tout_selectionner": "Tout sélectionner",
+    "tout_deselectionner": "Tout désélectionner",
+    "tous_departements": "Tous les départements",
+    "phase": "Phase",
+    "granularite": "Granularité",
+    "horaire": "Horaire",
+    "journalier": "Journalier",
+    "hebdomadaire": "Hebdomadaire",
+    "mensuel": "Mensuel",
+    "actualiser": "Actualiser",
+    "exporter": "Exporter Excel",
+    "cache_status": "Cache"
+  }
+}

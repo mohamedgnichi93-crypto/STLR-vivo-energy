@@ -25,7 +25,19 @@
   <meta name="twitter:title" content="STLR">
   <meta property="og:description" content="STLR Energy Intelligence Platform — Monitor electricity consumption in real-time">
   <meta name="twitter:description" content="STLR Energy Intelligence Platform — Monitor electricity consumption in real-time">
-</head>
+    <script>
+      (function() {
+        const saved = localStorage.getItem('stlr_theme')
+        const isDark = saved ? saved === 'dark' : true  // default: dark
+        if (isDark) {
+          document.documentElement.classList.add('dark')
+        } else {
+          document.documentElement.classList.remove('dark')
+        }
+      })()
+    </script>
+  </head>
+
 
   <body>
     <div id="root"></div>

@@ -1,4 +1,4 @@
-﻿export type Granularity = "daily" | "hourly" | "weekly" | "monthly";
+export type Granularity = "daily" | "hourly" | "weekly" | "monthly";
 export type Phase = "phaseA" | "phaseB" | "phaseC" | "total";
 
 export const PHASE_LABELS: Record<Phase, string> = {
@@ -28,13 +28,22 @@ export interface DeviceConsumption {
   daily: ConsumptionPoint[];
 }
 
-export function extractPhaseValue(raw: RawConsumptionPoint, phase: Phase): number {
+/**
+ * Extracts the value for a specific electrical phase from a raw consumption point.
+ * Since the WattNow API has been confirmed to return real phase data,
+ * this function maps phaseA/B/C directly.
+ */
+export function extractPhaseValue(point: RawConsumptionPoint, phase: Phase): number {
   switch (phase) {
-    case "phaseA": return raw.phaseA ?? 0;
-    case "phaseB": return raw.phaseB ?? 0;
-    case "phaseC": return raw.phaseC ?? 0;
+    case "phaseA": 
+      return point.phaseA;
+    case "phaseB": 
+      return point.phaseB;
+    case "phaseC": 
+      return point.phaseC;
     case "total":
-    default: return raw.total ?? 0;
+    default: 
+      return point.total;
   }
 }
 

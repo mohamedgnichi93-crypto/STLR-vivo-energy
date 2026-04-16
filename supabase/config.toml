@@ -1,4 +1,0 @@
-project_id = "xupbrojwntrcvwtncqvz"
-
-[functions.wattnow-proxy]
-verify_jwt = false

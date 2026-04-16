@@ -4,30 +4,94 @@ export interface Device {
   dn: string;
   measurementType: string;
   department: string;
+  color: string;
 }
 
+// Centralized department color palette
+export const DEPARTMENT_COLORS: Record<string, string> = {
+  Production:     "#10B981", // Emerald green
+  Infrastructure: "#3B82F6", // Blue
+  Administration: "#F59E0B", // Amber / orange
+};
+
 export const DEVICES: Device[] = [
-  { name: "Laboratoire", sn: "sn-13-10833", dn: "dn-13-10833", measurementType: "electrical", department: "Production" },
-  { name: "TGBT Principal", sn: "sn-13-11386", dn: "dn-13-11386", measurementType: "electrical", department: "Infrastructure" },
-  { name: "Administration", sn: "sn-13-11390", dn: "dn-13-11390", measurementType: "electrical", department: "Administration" },
-  { name: "Compresseur", sn: "sn-13-11405", dn: "dn-13-11405", measurementType: "electrical", department: "Production" },
-  { name: "ECL Zone 40", sn: "sn-13-11407", dn: "dn-13-11407", measurementType: "electrical", department: "Production" },
-  { name: "Chaudière", sn: "sn-13-11653", dn: "dn-13-15005", measurementType: "electrical", department: "Production" },
-  { name: "Blending", sn: "sn-13-15015", dn: "dn-13-15015", measurementType: "electrical", department: "Production" },
+  { 
+    name: "Laboratoire",    
+    sn: "sn-13-10833", 
+    dn: "dn-13-10833", 
+    measurementType: "electrical", 
+    department: "Production",     
+    color: "#10B981" 
+  },
+  { 
+    name: "TGBT Principal", 
+    sn: "sn-13-11386", 
+    dn: "dn-13-11386", 
+    measurementType: "electrical", 
+    department: "Infrastructure", 
+    color: "#3B82F6" 
+  },
+  { 
+    name: "Administration", 
+    sn: "sn-13-11390", 
+    dn: "dn-13-11390", 
+    measurementType: "electrical", 
+    department: "Administration", 
+    color: "#F59E0B" 
+  },
+  { 
+    name: "Compresseur",    
+    sn: "sn-13-11405", 
+    dn: "dn-13-11405", 
+    measurementType: "electrical", 
+    department: "Production",     
+    color: "#8B5CF6" 
+  },
+  { 
+    name: "ECL Zone 40",    
+    sn: "sn-13-11407", 
+    dn: "dn-13-11407", 
+    measurementType: "electrical", 
+    department: "Infrastructure", 
+    color: "#06B6D4" 
+  },
+  { 
+    name: "Chaudière",      
+    sn: "sn-13-11653", 
+    dn: "dn-13-15005", 
+    measurementType: "electrical", 
+    department: "Production",     
+    color: "#EF4444" 
+  },
+  { 
+    name: "Blending",       
+    sn: "sn-13-15015", 
+    dn: "dn-13-15015", 
+    measurementType: "electrical", 
+    department: "Production",     
+    color: "#F97316" 
+  },
 ];
 
 export const DEPARTMENTS = [...new Set(DEVICES.map(d => d.department))];
 
-// Fixed color per department — consistent across ALL charts
-export const DEPARTMENT_COLORS: Record<string, string> = {
-  Production: "hsl(155 60% 52%)",      // Emerald green
-  Infrastructure: "hsl(200 70% 55%)",  // Sky blue
-  Administration: "hsl(35 90% 55%)",   // Amber
-};
+/* ── Water Devices ────────────────────────────────────────────────────────── */
 
-// Get color for a device based on its department
-export function getDeviceColor(deviceName: string): string {
-  const device = DEVICES.find(d => d.name === deviceName);
-  if (!device) return "hsl(240 4% 55%)";
-  return DEPARTMENT_COLORS[device.department] || "hsl(240 4% 55%)";
+export const WATER_DEVICES: Device[] = [
+  {
+    name: "Général",
+    sn: "sn-39-10171",
+    dn: "dn-39-10171",
+    measurementType: "water",
+    department: "Infrastructure",
+    color: "#0EA5E9",
+  },
+];
+
+export const WATER_DEPARTMENTS = [...new Set(WATER_DEVICES.map(d => d.department))];
+
+/** Returns the department color for a given device name or dn. Falls back to neutral grey. */
+export function getDeviceColor(deviceIdentifier: string): string {
+  const allDevices = [...DEVICES, ...WATER_DEVICES];
+  return allDevices.find(d => d.name === deviceIdentifier || d.dn === deviceIdentifier)?.color ?? "#6B7280";
 }
